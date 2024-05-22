@@ -8,9 +8,17 @@ const App = () => {
     setResult(result.concat(event.target.value));
   }
 
-  const calculator = () =>{
-    setResult(eval(result).toString())
-  }
+  const calculator = () => {
+    if (result.trim() === "") {
+      clear();
+    } else {
+      try {
+        setResult(eval(result).toString());
+      } catch (e) {
+        clear();
+      }
+    }
+  };
 
   const clear = () =>{
     setResult("")

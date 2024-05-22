@@ -2,31 +2,36 @@
 
 body {
   background-color: #282c34;
-  background-image: url('https://www.transparenttextures.com/patterns/clean-gray-paper.png');
+  background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  backdrop-filter: blur(5px);
 }
 
 .calculator {
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   overflow: hidden;
-  width: 350px;
-  background-color: rgba(30, 30, 30, 0.9);
+  width: 90%;
+  max-width: 350px;
+  background-color: rgba(30, 30, 30, 0.7); /* Increased transparency */
   padding: 20px;
   backdrop-filter: blur(10px);
   position: relative;
+  animation: fadeIn 1s ease-in-out;
 }
 
 #answer {
   font-size: 2.5rem;
   text-align: right;
   padding: 20px;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: rgba(51, 51, 51, 0.8); /* Opaque background */
   color: #fff;
   border: none;
   width: calc(100% - 40px);
@@ -51,6 +56,9 @@ input[type="button"] {
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: buttonFadeIn 0.5s ease-in-out;
+  background-color: #fff; /* Opaque background */
+  color: #000; /* Black text color for better readability */
 }
 
 input[type="button"]:hover {
@@ -64,45 +72,68 @@ input[type="button"]:active {
 }
 
 input[type="button"].number {
-  background: linear-gradient(to bottom, #4caf50, #388e3c);
+  background: linear-gradient(to bottom, #4caf50, #388e3c); /* Opaque gradient */
   color: #fff;
 }
 
 input[type="button"].number:hover {
-  background: linear-gradient(to bottom, #66bb6a, #43a047);
+  background: linear-gradient(to bottom, #66bb6a, #43a047); /* Opaque gradient */
 }
 
 input[type="button"].operator {
-  background: linear-gradient(to bottom, #ff5722, #e64a19);
+  background: linear-gradient(to bottom, #ff5722, #e64a19); /* Opaque gradient */
   color: #fff;
 }
 
 input[type="button"].operator:hover {
-  background: linear-gradient(to bottom, #ff7043, #f4511e);
+  background: linear-gradient(to bottom, #ff7043, #f4511e); /* Opaque gradient */
 }
 
 .end {
   grid-column: span 2;
-  background: linear-gradient(to bottom, #2196f3, #1976d2);
+  background: linear-gradient(to bottom, #2196f3, #1976d2); /* Opaque gradient */
   color: #fff;
 }
 
 .end:hover {
-  background: linear-gradient(to bottom, #42a5f5, #1e88e5);
+  background: linear-gradient(to bottom, #42a5f5, #1e88e5); /* Opaque gradient */
 }
 
 .clear {
-  background: linear-gradient(to bottom, #f44336, #d32f2f);
+  background: linear-gradient(to bottom, #f44336, #d32f2f); /* Opaque gradient */
+  color: #fff;
 }
 
 .clear:hover {
-  background: linear-gradient(to bottom, #ef5350, #c62828);
+  background: linear-gradient(to bottom, #ef5350, #c62828); /* Opaque gradient */
 }
 
 .equal {
-  background: linear-gradient(to bottom, #4caf50, #388e3c);
+  background: linear-gradient(to bottom, #4caf50, #388e3c); /* Opaque gradient */
+  color: #fff;
 }
 
 .equal:hover {
-  background: linear-gradient(to bottom, #66bb6a, #43a047);
+  background: linear-gradient(to bottom, #66bb6a, #43a047); /* Opaque gradient */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes buttonFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 480px) {
+  input[type="button"] {
+    font-size: 1.2rem;
+    height: 60px;
+  }
+
+  #answer {
+    font-size: 2rem;
+  }
 }
