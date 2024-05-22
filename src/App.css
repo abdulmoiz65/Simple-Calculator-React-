@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  background-color: #282c34;
+  background-image: url('https://www.transparenttextures.com/patterns/clean-gray-paper.png');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.calculator {
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  overflow: hidden;
+  width: 350px;
+  background-color: rgba(30, 30, 30, 0.9);
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+#answer {
+  font-size: 2.5rem;
+  text-align: right;
+  padding: 20px;
+  background-color: rgba(51, 51, 51, 0.8);
+  color: #fff;
+  border: none;
+  width: calc(100% - 40px);
+  margin: 0 20px 20px 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding: 0 20px;
+}
+
+input[type="button"] {
+  font-size: 1.5rem;
+  height: 80px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+input[type="button"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+input[type="button"]:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input[type="button"].number {
+  background: linear-gradient(to bottom, #4caf50, #388e3c);
+  color: #fff;
+}
+
+input[type="button"].number:hover {
+  background: linear-gradient(to bottom, #66bb6a, #43a047);
+}
+
+input[type="button"].operator {
+  background: linear-gradient(to bottom, #ff5722, #e64a19);
+  color: #fff;
+}
+
+input[type="button"].operator:hover {
+  background: linear-gradient(to bottom, #ff7043, #f4511e);
+}
+
+.end {
+  grid-column: span 2;
+  background: linear-gradient(to bottom, #2196f3, #1976d2);
+  color: #fff;
+}
+
+.end:hover {
+  background: linear-gradient(to bottom, #42a5f5, #1e88e5);
+}
+
+.clear {
+  background: linear-gradient(to bottom, #f44336, #d32f2f);
+}
+
+.clear:hover {
+  background: linear-gradient(to bottom, #ef5350, #c62828);
+}
+
+.equal {
+  background: linear-gradient(to bottom, #4caf50, #388e3c);
+}
+
+.equal:hover {
+  background: linear-gradient(to bottom, #66bb6a, #43a047);
+}
